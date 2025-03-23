@@ -57,13 +57,13 @@ public struct SimpleShowcase: View {
 
     public struct Layout {
         public struct Title {
-            static let height: CGFloat = 32.0
+            static let height: CGFloat = Token.Size.large
         }
 
         public struct Card {
-            static let margin: CGFloat = 16.0
+            static let margin: CGFloat = Token.Size.medium
         }
 
-        static let space: CGFloat = 8.0
+        static let space: CGFloat = Token.Size.small
     }
 }

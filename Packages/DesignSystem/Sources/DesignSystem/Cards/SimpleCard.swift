@@ -20,6 +20,6 @@ public struct SimpleCard: View {
     public struct Layout {
         static let width: CGFloat = 96.0
         static let height: CGFloat = 128.0
-        static let cornerRadius: CGFloat = 8.0
+        static let cornerRadius: CGFloat = Token.Size.small
     }
 }
