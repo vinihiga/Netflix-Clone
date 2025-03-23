@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		24A467392D8F8CF30048D797 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 24A467382D8F8CF30048D797 /* ComposableArchitecture */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		24A4671B2D8F8AF20048D797 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -30,19 +34,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		24A4670C2D8F8AF10048D797 /* Netflix Clone */ = {
+		24A4670C2D8F8AF10048D797 /* App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Netflix Clone";
+			path = App;
 			sourceTree = "<group>";
 		};
-		24A4671D2D8F8AF20048D797 /* Netflix CloneTests */ = {
+		24A4671D2D8F8AF20048D797 /* Unit Tests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Netflix CloneTests";
+			path = "Unit Tests";
 			sourceTree = "<group>";
 		};
-		24A467272D8F8AF20048D797 /* Netflix CloneUITests */ = {
+		24A467272D8F8AF20048D797 /* UI Tests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Netflix CloneUITests";
+			path = "UI Tests";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24A467392D8F8CF30048D797 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,9 +80,9 @@
 		24A467012D8F8AF10048D797 = {
 			isa = PBXGroup;
 			children = (
-				24A4670C2D8F8AF10048D797 /* Netflix Clone */,
-				24A4671D2D8F8AF20048D797 /* Netflix CloneTests */,
-				24A467272D8F8AF20048D797 /* Netflix CloneUITests */,
+				24A4670C2D8F8AF10048D797 /* App */,
+				24A4671D2D8F8AF20048D797 /* Unit Tests */,
+				24A467272D8F8AF20048D797 /* UI Tests */,
 				24A4670B2D8F8AF10048D797 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,10 +113,11 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				24A4670C2D8F8AF10048D797 /* Netflix Clone */,
+				24A4670C2D8F8AF10048D797 /* App */,
 			);
 			name = "Netflix Clone";
 			packageProductDependencies = (
+				24A467382D8F8CF30048D797 /* ComposableArchitecture */,
 			);
 			productName = "Netflix Clone";
 			productReference = 24A4670A2D8F8AF10048D797 /* Netflix Clone.app */;
@@ -131,7 +137,7 @@
 				24A4671C2D8F8AF20048D797 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				24A4671D2D8F8AF20048D797 /* Netflix CloneTests */,
+				24A4671D2D8F8AF20048D797 /* Unit Tests */,
 			);
 			name = "Netflix CloneTests";
 			packageProductDependencies = (
@@ -154,7 +160,7 @@
 				24A467262D8F8AF20048D797 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				24A467272D8F8AF20048D797 /* Netflix CloneUITests */,
+				24A467272D8F8AF20048D797 /* UI Tests */,
 			);
 			name = "Netflix CloneUITests";
 			packageProductDependencies = (
@@ -195,6 +201,9 @@
 			);
 			mainGroup = 24A467012D8F8AF10048D797;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				24A467372D8F8CF30048D797 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 24A4670B2D8F8AF10048D797 /* Products */;
 			projectDirPath = "";
@@ -395,16 +404,16 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Netflix Clone/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"App/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -413,9 +422,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.viniciushiga.netflix-clone";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -426,16 +439,16 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Netflix Clone/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"App/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -444,9 +457,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.viniciushiga.netflix-clone";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -562,6 +579,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		24A467372D8F8CF30048D797 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.18.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		24A467382D8F8CF30048D797 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 24A467372D8F8CF30048D797 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 24A467022D8F8AF10048D797 /* Project object */;
 }
