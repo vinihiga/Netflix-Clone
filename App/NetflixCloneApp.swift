@@ -10,8 +10,7 @@ import SwiftUI
 @main
 struct NetflixCloneApp: App {
     init() {
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
+        Self.setupAppearence()
     }
 
     var body: some Scene {
@@ -22,8 +21,6 @@ struct NetflixCloneApp: App {
                         SetupNavigation()
                     }
                     .navigationBarTitleDisplayMode(.inline)
-                    .toolbarBackground(Color.black, for: .navigationBar)
-                    .toolbarBackground(.visible, for: .navigationBar)
             }
         }
     }
@@ -31,25 +28,38 @@ struct NetflixCloneApp: App {
     @ToolbarContentBuilder
     private func SetupNavigation() -> some ToolbarContent {
         ToolbarItem(placement: .topBarLeading) {
-            Text("For Username")
+            Text("To Vinicius")
                 .font(.title)
                 .fontWeight(.bold)
                 .foregroundColor(.white)
         }
 
         ToolbarItem(placement: .topBarTrailing) {
-            Image(systemName: "magnifyingglass", variableValue: 18.0)
+            Image(systemName: "square.and.arrow.up")
                 .foregroundColor(Color.white)
+                .fontWeight(.bold)
+                .offset(y: -2.0) // Seems like Apple's has a padding bug with that image
         }
 
         ToolbarItem(placement: .topBarTrailing) {
-            Image(systemName: "magnifyingglass", variableValue: 18.0)
+            Image(systemName: "arrow.down.circle")
                 .foregroundColor(Color.white)
+                .fontWeight(.bold)
         }
 
         ToolbarItem(placement: .topBarTrailing) {
-            Image(systemName: "magnifyingglass", variableValue: 18.0)
+            Image(systemName: "magnifyingglass")
                 .foregroundColor(Color.white)
+                .fontWeight(.bold)
         }
+    }
+
+    private static func setupAppearence() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithTransparentBackground()
+        appearance.backgroundColor = UIColor.gray.withAlphaComponent(0.5)
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+
+        UINavigationBar.appearance().standardAppearance = appearance
     }
 }

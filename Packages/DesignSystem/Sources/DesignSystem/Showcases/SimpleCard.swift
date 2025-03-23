@@ -13,11 +13,13 @@ public struct SimpleCard: View {
     public var body: some View {
         VStack {}
             .frame(width: Layout.width, height: Layout.height)
-            .background(Color.red)
+            .background(Color.mint)
+            .cornerRadius(Layout.cornerRadius)
     }
 
     public struct Layout {
         static let width: CGFloat = 96.0
         static let height: CGFloat = 128.0
+        static let cornerRadius: CGFloat = 8.0
     }
 }
