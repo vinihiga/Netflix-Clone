@@ -18,7 +18,38 @@ struct NetflixCloneApp: App {
         WindowGroup {
             NavigationStack {
                 HomeView()
+                    .toolbar {
+                        SetupNavigation()
+                    }
+                    .navigationBarTitleDisplayMode(.inline)
+                    .toolbarBackground(Color.black, for: .navigationBar)
+                    .toolbarBackground(.visible, for: .navigationBar)
             }
+        }
+    }
+
+    @ToolbarContentBuilder
+    private func SetupNavigation() -> some ToolbarContent {
+        ToolbarItem(placement: .topBarLeading) {
+            Text("For Username")
+                .font(.title)
+                .fontWeight(.bold)
+                .foregroundColor(.white)
+        }
+
+        ToolbarItem(placement: .topBarTrailing) {
+            Image(systemName: "magnifyingglass", variableValue: 18.0)
+                .foregroundColor(Color.white)
+        }
+
+        ToolbarItem(placement: .topBarTrailing) {
+            Image(systemName: "magnifyingglass", variableValue: 18.0)
+                .foregroundColor(Color.white)
+        }
+
+        ToolbarItem(placement: .topBarTrailing) {
+            Image(systemName: "magnifyingglass", variableValue: 18.0)
+                .foregroundColor(Color.white)
         }
     }
 }
