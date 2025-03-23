@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2474805F2D907AC900B31933 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 2474805E2D907AC900B31933 /* DesignSystem */; };
+		24464EF42D90851700409C8B /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 24464EF32D90851700409C8B /* DesignSystem */; };
+		24464EF72D9085C900409C8B /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 24464EF62D9085C900409C8B /* DesignSystem */; };
 		24A467392D8F8CF30048D797 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 24A467382D8F8CF30048D797 /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
@@ -57,8 +58,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24464EF72D9085C900409C8B /* DesignSystem in Frameworks */,
 				24A467392D8F8CF30048D797 /* ComposableArchitecture in Frameworks */,
-				2474805F2D907AC900B31933 /* DesignSystem in Frameworks */,
+				24464EF42D90851700409C8B /* DesignSystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,7 +130,8 @@
 			name = "Netflix Clone";
 			packageProductDependencies = (
 				24A467382D8F8CF30048D797 /* ComposableArchitecture */,
-				2474805E2D907AC900B31933 /* DesignSystem */,
+				24464EF32D90851700409C8B /* DesignSystem */,
+				24464EF62D9085C900409C8B /* DesignSystem */,
 			);
 			productName = "Netflix Clone";
 			productReference = 24A4670A2D8F8AF10048D797 /* Netflix Clone.app */;
@@ -214,7 +217,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				24A467372D8F8CF30048D797 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
-				245A9A032D9079F600DA9EE2 /* XCLocalSwiftPackageReference "Packages/design-system" */,
+				24464EF52D9085C900409C8B /* XCLocalSwiftPackageReference "Packages/DesignSystem" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 24A4670B2D8F8AF10048D797 /* Products */;
@@ -593,9 +596,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		245A9A032D9079F600DA9EE2 /* XCLocalSwiftPackageReference "Packages/design-system" */ = {
+		24464EF52D9085C900409C8B /* XCLocalSwiftPackageReference "Packages/DesignSystem" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = "Packages/design-system";
+			relativePath = Packages/DesignSystem;
 		};
 /* End XCLocalSwiftPackageReference section */
 
@@ -611,9 +614,12 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2474805E2D907AC900B31933 /* DesignSystem */ = {
+		24464EF32D90851700409C8B /* DesignSystem */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 245A9A032D9079F600DA9EE2 /* XCLocalSwiftPackageReference "Packages/design-system" */;
+			productName = DesignSystem;
+		};
+		24464EF62D9085C900409C8B /* DesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
 			productName = DesignSystem;
 		};
 		24A467382D8F8CF30048D797 /* ComposableArchitecture */ = {
