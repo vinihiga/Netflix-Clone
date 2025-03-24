@@ -16,41 +16,10 @@ struct NetflixCloneApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                HomeView()
-                    .toolbar {
-                        SetupNavigation()
-                    }
-                    .navigationBarTitleDisplayMode(.inline)
+                HomeView(store: .init(initialState: HomeFeature.State(showcases: []), reducer: {
+                    HomeFeature()
+                }))
             }
-        }
-    }
-
-    @ToolbarContentBuilder
-    private func SetupNavigation() -> some ToolbarContent {
-        ToolbarItem(placement: .topBarLeading) {
-            Text("To Vinicius")
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(.white)
-        }
-
-        ToolbarItem(placement: .topBarTrailing) {
-            Image(systemName: "square.and.arrow.up")
-                .foregroundColor(Color.white)
-                .fontWeight(.bold)
-                .offset(y: -2.0) // Seems like Apple's has a padding bug with that image
-        }
-
-        ToolbarItem(placement: .topBarTrailing) {
-            Image(systemName: "arrow.down.circle")
-                .foregroundColor(Color.white)
-                .fontWeight(.bold)
-        }
-
-        ToolbarItem(placement: .topBarTrailing) {
-            Image(systemName: "magnifyingglass")
-                .foregroundColor(Color.white)
-                .fontWeight(.bold)
         }
     }
 
