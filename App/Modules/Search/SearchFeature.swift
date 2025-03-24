@@ -24,27 +24,60 @@ struct SearchFeature {
 
     var body: some Reducer<State, Action> {
         BindingReducer()
-        Reduce { state, action in
+        Reduce {
+            state,
+            action in
             switch action {
             case .binding(\.searchText):
                 return .send(.fetch)
             case .fetch:
-                var title = "For you"
-
-                if !state.searchText.isEmpty {
-                    title = "Search results for " + state.searchText
+                var showcases: [Showcase] = []
+                
+                if state.searchText.isEmpty {
+                    showcases = mockDefaultRecommendations()
+                } else {
+                    showcases = mockCustomizedRecommendations(
+                        with: state.searchText
+                    )
                 }
 
-                let videos: [Video] = (0 ..< 6).map { _ in
-                    .init(title: UUID().uuidString)
-                }
-
-                let showcase = Showcase(title: title, suggestions: videos)
-                state.showcases = [showcase]
+                state.showcases = showcases
                 return .none
             default:
                 return .none
             }
         }
+    }
+
+    private func mockDefaultRecommendations() -> [Showcase] {
+        let titles: [String] = ["For you", "Action", "Comedy", "Horror", "Dorama"]
+
+        let showcases: [Showcase] = titles.map { title in
+            let videos: [Video] = (0 ..< 6).map { _ in
+                .init(title: UUID().uuidString)
+            }
+
+            return .init(title: title, suggestions: videos)
+        }
+
+        return showcases
+    }
+
+    private func mockCustomizedRecommendations(
+        with searchText: String
+    ) -> [Showcase] {
+        let searchResultLabel = "Search results for " + searchText
+
+        let titles: [String] = [searchResultLabel, "Action", "Comedy", "Horror", "Dorama"]
+
+        let showcases: [Showcase] = titles.map { title in
+            let videos: [Video] = (0 ..< 6).map { _ in
+                .init(title: UUID().uuidString)
+            }
+
+            return .init(title: title, suggestions: videos)
+        }
+
+        return showcases
     }
 }

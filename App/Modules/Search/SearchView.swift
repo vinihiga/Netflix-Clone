@@ -20,13 +20,16 @@ struct SearchView: View {
 
     var body: some View {
         VStack {
-            ForEach(store.showcases, id: \.title) { showcase in
-                SimpleShowcase(title: showcase.title)
+            ScrollView {
+                ForEach(store.showcases, id: \.title) { showcase in
+                    SimpleShowcase(title: showcase.title)
+                }
+                Spacer()
             }
-            Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.black)
+        .ignoresSafeArea(edges: [])
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
         .toolbar {
